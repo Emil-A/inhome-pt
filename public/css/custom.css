@@ -1,0 +1,113 @@
+body { 
+	padding-top: 0px;
+}
+
+#under-nav {
+    padding-top: 100px;
+}
+
+.jumbotron {
+	background-image: url("../img/jumbotron.jpg");
+	background-size: cover;
+	height: 100vh;
+	padding-top: 40vh;
+	padding-left: 10%;
+
+	color: white;
+}
+
+.jumbotron p {
+	font-size: 30px;
+}
+
+.navbar-default {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background: rgba(1,1,1,1);
+    border: transparent;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: inset 0 0px 0 ;
+}
+
+.navbar-inverse {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background: rgba(1,1,1,0);
+    border: transparent;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: inset 0 0px 0 ;
+}
+
+
+.navbar-default {
+  	box-shadow: inset 0 0px 0 ;
+}
+
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > li > a:hover, 
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #0099cc;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+    /*-webkit-text-stroke: 1px #000;*/
+    font-size: 200%;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 10px;
+}
+
+.nav.navbar-nav li a {
+    color: white;
+    /*-webkit-text-stroke: 1px #000;*/
+    font-size: 200%;
+    padding-top: 25px;
+    padding-left: 80px;
+  	padding-right: 10px;
+}
+
+.stroke {
+    /*color: white;
+    -webkit-text-stroke: 1px #000;*/
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius:0;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
