@@ -22,17 +22,29 @@
 			$(document).ready(function() {
 				$('#calendar').fullCalendar({
 					schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
-					defaultView: 'timelineMonth',
+					defaultView: 'agendaWeek',//agendaDay
 					events: [
-						// events go here
+						// events go here	
+						{ id: '1', resourceId: 't1', start: '2016-04-23T14:00:00', end: '2016-04-23T15:00:00', title: 'Session 1' },
+						{ id: '2', resourceId: 't2', start: '2016-04-24T11:00:00', end: '2016-04-24T12:00:00', title: 'PT Session' },
+						{ id: '3', resourceId: 't3', start: '2016-04-25T17:00:00', end: '2016-04-25T19:00:00', title: 'First Session' }
+					
 					],
+					resourceLabelText: 'Trainers',
 					resources: [
 						// resources go here
+						{ id: 't1', title: 'John Pizza' },
+						{ id: 't2', title: 'Serious Lady' },
+						{ id: 't3', title: 'Joe Clipboard' }
 					]
-						// other options go here...
+					// other options go here...
 				});
 			});
 
+			// readjust sizing after font load
+			$(window).on('load', function() {
+				$('#calendar').fullCalendar('render');
+			});
 		</script>
 	</head>
 	<body>
