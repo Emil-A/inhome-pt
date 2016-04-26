@@ -25,14 +25,12 @@
 					defaultView: 'agendaWeek',//agendaDay
 					minTime: "06:00:00",
 					maxTime:  "22:00:00",
-					height: 'auto',
-					
-					
+					height: 'auto',		
 					events: [
 						// events go here	
-						{ id: '1', resourceId: 't1', start: '2016-04-23T14:00:00', end: '2016-04-23T15:00:00', title: 'Session 1'},
-						{ id: '2', resourceId: 't2', start: '2016-04-24T11:00:00', end: '2016-04-24T12:00:00', title: 'PT Session', color: 'yellow', textColor: 'black' },
-						{ id: '3', resourceId: 't3', start: '2016-04-25T17:00:00', end: '2016-04-25T19:00:00', title: 'First Session' }
+						{ id: '1', resourceId: 't1', start: '2016-04-26T13:00:00', end: '2016-04-26T15:00:00', title: 'Available'},
+						{ id: '2', resourceId: 't1', start: '2016-04-26T15:00:00', end: '2016-04-26T16:00:00', title: 'Booked', color: 'red', textColor: 'black' },
+						{ id: '3', resourceId: 't1', start: '2016-04-26T16:00:00', end: '2016-04-26T19:00:00', title: 'Available' }
 					
 					],
 					resourceLabelText: 'Trainers',
@@ -44,7 +42,8 @@
 					],
 					
 					eventClick: function(calEvent, jsEvent, view) {
-						alert("woow" + calEvent.title + "jsEvent " + jsEvent.pageX + " view: " + view.name);
+						//Clicked event
+						handleBooking(calEvent);
 					}
 					// other options go here...
 				});
@@ -54,9 +53,36 @@
 			$(window).on('load', function() {
 				$('#calendar').fullCalendar('render');
 			});*/
+			function handleBooking(calEvent) {
+				if(calEvent.title == "Available") {
+					//Open modal to confirm if selected available time slot
+					var modal = $('#myModal').modal('toggle');
+					modal.find('.modal-title').text("Confirm booking with " + calEvent.resourceId);
+					modal.find('.modal-body').text("Would you like to book " + calEvent.resourceId + " from " + calEvent.start + "-" + calEvent.end);
+				}
+			}
 		</script>
 	</head>
 	<body>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Confirm Booking</h4>
+				</div>
+				<div class="modal-body">
+					Would you like to book John Pizza? At this time?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<a href="./join.html"><button type="button" class="btn btn-primary">Confirm</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 		<div class="container">
 			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class="navbar-header">
