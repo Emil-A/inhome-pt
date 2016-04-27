@@ -1,0 +1,30 @@
+{
+	"name": "inhome-pt",
+	"version": "0.0.1",
+	"description": "web app for inhome-pt",
+	"author": "Emil Aite",
+	"license": "ISC",
+	"dependencies": {
+		"express": "*",
+		"body-parser": "1.15.0"
+	},
+	"scripts": {
+		"start": "node server.js"
+	},
+	"main": "server.js",
+	"devDependencies": {
+		"chai": "3.5.0",
+		"cheerio": "0.20.0",
+		"karma": "0.13.22",
+		"mocha": "2.4.5",
+		"sinon": "1.17.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Emil-A/barcode-repository.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Emil-A/inhome-pt/issues"
+	},
+	"homepage": "https://github.com/Emil-A/inhome-pt#readme"
+}
